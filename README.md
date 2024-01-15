@@ -14,6 +14,7 @@ Bash pipeline for Single Nucleotide Polymorphism (SNP) and CNV detection in WGS 
 
 # Quality checking using FastQC
 
+```
 #!/bin/bash
 
 #Specify the base directory where your folders are located
@@ -38,5 +39,5 @@ mv "$folder"/*.html "$result_dir"
 
 echo "Quality control results for $folder_name saved in $result_dir"
 done
-
+```
     
