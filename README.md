@@ -8,7 +8,9 @@ Bash pipeline for Single Nucleotide Polymorphism (SNP) and CNV detection in WGS 
     sudo apt-get update
     sudo apt-get -y install fastqc 
 
+# Picard
 
+    wget -O picard.jar https://github.com/broadinstitute/picard/releases/download/2.26.2/picard.jar
 
 
 
