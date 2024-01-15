@@ -18,7 +18,7 @@ Bash pipeline for Single Nucleotide Polymorphism (SNP) and CNV detection in WGS 
 #!/bin/bash
 
 #Specify the base directory where your folders are located
-base_dir="/mnt/d/F23A430001979_PLAheanR/soapnuke/clean"
+base_dir="/mnt/d/PLAheanR/soapnuke/clean"
 
 #Iterate through folders starting with RC_
 for folder in "$base_dir"/RC_*;
