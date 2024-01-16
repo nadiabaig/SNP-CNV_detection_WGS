@@ -50,10 +50,10 @@ done
 #!/bin/bash
 
 #indexing reference genome
-reference_genome="/mnt/d/PotatoTools/Agria-Ref/Agria_21082020/Potato/dAg_v1.0/Agria_assembly_final_2020_21_08.fasta"
+reference_genome="/dAg_v1.0/Agria_assembly_final_2020_21_08.fasta"
 #bwa index $reference_genome
 #
-base_dir="/mnt/d/F23A430001979_PLAheanR/soapnuke/clean"
+base_dir="/mnt/d/PLAheanR/soapnuke/clean"
 
 # Iterate through folders starting with RC_
 for folder in "$base_dir"/RC_*;
@@ -90,7 +90,7 @@ java -jar picard.jar BuildBamIndex INPUT="$result_dir"/deduplicated_reads.bam
 
 wait
 
-java -jar /mnt/d/F23A430001979_PLAheanR/soapnuke/clean/gatk-4.2.0.0/gatk-package-4.2.0.0-local.jar \
+java -jar /mnt/d/gatk-4.2.0.0/gatk-package-4.2.0.0-local.jar \
         -T RealignerTargetCreator \
         -R $reference_genome \
         -I "$result_dir"/deduplicated_reads.bam \
@@ -98,7 +98,7 @@ java -jar /mnt/d/F23A430001979_PLAheanR/soapnuke/clean/gatk-4.2.0.0/gatk-package
 
 wait
 #Create Realignment Targets. Local realignment around indels to reduce wrong variant calls
-java -jar /mnt/d/F23A430001979_PLAheanR/soapnuke/clean/gatk-4.2.0.0/gatk-package-4.2.0.0-local.jar \
+java -jar /gatk-4.2.0.0/gatk-package-4.2.0.0-local.jar \
         -T IndelRealigner \
         -R $reference_genome \
         -I "$result_dir"/deduplicated_reads.bam \
